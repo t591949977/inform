@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Просмотр плейлиста</title>
+  <style>
+   body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #111;
+}
+
+.topbar {
+  flex: 0 0 auto;
+  padding: 10px 16px;
+  background: #222;
+  color: #fff;
+}
+
+.player-wrap {
+  flex: 1 1 auto;      /* занимает всё оставшееся место */
+  position: relative;
+  width: 100%;
+}
+
+.player-wrap iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <button onclick="window.close()">Закрыть</button>
+  </div>
+
+  <div class="player-wrap">
+    <iframe id="ytPlayer" allowfullscreen
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+    </iframe>
+  </div>
+
+  <script>
+    // 1. Читаем ID плейлиста из адресной строки
+    const params = new URLSearchParams(window.location.search);
+    const listId = params.get('list');
+
+    // 2. Если параметр не передан — показываем сообщение
+    if (!listId) {
+      document.querySelector('.player-wrap').innerHTML =
+        '<p style="color:#fff;padding:20px;">Плейлист не указан.</p>';
+    } else {
+      // 3. Формируем embed-ссылку и подставляем в iframe
+      const src = 'https://www.youtube.com/embed/videoseries?list=' + encodeURIComponent(listId);
+      document.getElementById('ytPlayer').src = src;
+    }
+  </script>
+
+</body>
+</html>
