@@ -1,0 +1,932 @@
+/* ============================================
+   БАЗОВЫЙ СБРОС И НАСТРОЙКИ
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================
+   ГЛАВНЫЙ КОНТЕЙНЕР — РАСТЯГИВАЕТСЯ НА ВСЮ ВЫСОТУ
+   ============================================ */
+body {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ============================================
+   ВЕРТИКАЛЬНОЕ МЕНЮ — РАСТЯГИВАЕТСЯ
+   ============================================ */
+.vertical-menu {
+    width: 280px;
+    background: #e8e8e8;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.language-selector {
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.language-selector select {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 2px solid rgba(0,0,0,0.15);
+    border-radius: 10px;
+    background: #ffffff;
+    color: #333333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+}
+
+.language-selector select:hover {
+    border-color: #b8a88a;
+    background-color: #f5f0eb;
+}
+
+.language-selector select:focus {
+    outline: none;
+    border-color: #b8a88a;
+    box-shadow: 0 0 20px rgba(184, 168, 138, 0.3);
+}
+
+.language-selector select option {
+    background: #ffffff;
+    color: #333333;
+    padding: 10px;
+}
+
+/* ============================================
+   КНОПКИ НАВИГАЦИИ
+   ============================================ */
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    padding-right: 4px;
+}
+
+.nav-buttons::-webkit-scrollbar {
+    width: 6px;
+}
+
+.nav-buttons::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.nav-buttons::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.nav-buttons::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ============================================
+   КНОПКИ (БЕЗ НОМЕРОВ)
+   ============================================ */
+.nav-btn {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.05);
+    color: #555555;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    line-height: 1.4;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+    white-space: normal;
+    flex-shrink: 0;
+}
+
+.nav-btn .btn-text {
+    display: block;
+    width: 100%;
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+.nav-btn:hover {
+    background: rgba(184, 168, 138, 0.2);
+    color: #333333;
+    transform: translateX(5px);
+}
+
+.nav-btn.active {
+    background: #c8c8c8 !important;
+    color: #222222 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    transform: translateX(5px);
+}
+
+.nav-btn.active::before {
+    content: '▸';
+    position: absolute;
+    left: -5px;
+    color: #999999;
+    font-size: 20px;
+}
+
+/* ============================================
+   МОБИЛЬНАЯ ВЕРСИЯ - ВЫБОР ЯЗЫКА
+   ============================================ */
+.mobile-language-selector {
+    display: none;
+    background: #e8e8e8;
+    padding: 10px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-language-selector .mobile-brand {
+    color: #333333;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.mobile-language-selector select {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 15px;
+    border: 2px solid rgba(0,0,0,0.15);
+    border-radius: 8px;
+    background: #ffffff;
+    color: #333333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    min-width: 0;
+}
+
+.mobile-language-selector select:focus {
+    outline: none;
+    border-color: #b8a88a;
+    box-shadow: 0 0 20px rgba(184, 168, 138, 0.2);
+}
+
+.mobile-language-selector select option {
+    background: #ffffff;
+    color: #333333;
+    padding: 8px;
+}
+
+/* ============================================
+   ОСНОВНОЙ КОНТЕНТ — РАСТЯГИВАЕТСЯ
+   ============================================ */
+.main-content {
+    flex: 1;
+    padding: 30px 40px 40px 40px;
+    background: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.main-content h1 {
+    font-size: 28px;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   КЛАССЫ ДЛЯ КАРТИНОК
+   ============================================ */
+.img-left {
+    float: left;
+    margin: 7px 15px 7px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-right {
+    float: right;
+    margin: 7px 0 7px 15px;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-center {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    border: 5px solid #CCC;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.text-center {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================
+   КОНТЕЙНЕР С КОЛОНКАМИ
+   ============================================ */
+.columns-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    min-height: 0;
+}
+
+.column-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 16px;
+    min-height: 0;
+}
+
+.column-header {
+	font-weight: 600;
+	font-size: 16px;
+	color: #1a1a2e;
+	padding-bottom: 12px;
+	border-bottom: 2px solid #e8e8e8;
+	margin-bottom: 12px;
+	flex-shrink: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.column-scroll {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+    padding-right: 4px;
+    color: #555657;
+}
+
+.column-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: justify;
+    border: 1px solid #f0f0f0;
+}
+
+.column-table td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.column-table tr:last-child td {
+    border-bottom: none;
+}
+
+.column-table tr:hover td {
+    background: #f8f9fa;
+}
+
+.column-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.column-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.column-scroll::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.column-scroll::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ============================================
+   АДАПТИВНОСТЬ
+   ============================================ */
+
+/* 3 колонки — по умолчанию */
+
+/* 2 колонки (769–1100px) */
+@media (max-width: 1100px) and (min-width: 769px) {
+    .columns-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .column-card:nth-child(3) {
+        display: none !important;
+    }
+    .vertical-menu {
+        display: flex !important;
+    }
+    .mobile-language-selector {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   МОБИЛЬНАЯ ВЕРСИЯ (≤ 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    /* ---------- СКРЫВАЕМ ДЕСКТОПНОЕ МЕНЮ ---------- */
+    .vertical-menu {
+        display: none !important;
+    }
+
+    /* ---------- ПОКАЗЫВАЕМ МОБИЛЬНУЮ ПАНЕЛЬ ---------- */
+    .mobile-language-selector {
+        display: block !important;
+        padding: 0;
+        background: #e8e8e8;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* ---------- ВЕРХНЯЯ ПАНЕЛЬ ---------- */
+    .mobile-top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 10px;
+        gap: 8px;
+        background: #e8e8e8;
+        position: relative;
+    }
+
+    /* ---------- ЦЕНТРАЛЬНЫЙ ЗАГОЛОВОК ---------- */
+    .mobile-center-title {
+        flex: 1;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333333;
+        letter-spacing: 1px;
+    }
+
+    /* ---------- ВЫПАДАЮЩИЕ МЕНЮ ---------- */
+    .mobile-dropdown {
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .mobile-dropdown-btn {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 10px;
+        border: 2px solid rgba(0,0,0,0.15);
+        border-radius: 8px;
+        background: #ffffff;
+        color: #333333;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .mobile-dropdown-btn:hover,
+    .mobile-dropdown-btn:active {
+        border-color: #b8a88a;
+        background: #f5f0eb;
+    }
+
+    .mobile-icon {
+        font-size: 16px;
+    }
+
+    .mobile-current {
+        font-size: 13px;
+        font-weight: 700;
+        color: #555;
+    }
+
+    .mobile-arrow {
+        font-size: 14px;
+        color: #888;
+        transition: transform 0.3s ease;
+        margin-left: 2px;
+    }
+
+    /* ---------- ВЫПАДАЮЩИЙ СПИСОК ---------- */
+    .mobile-dropdown-content {
+        display: none;
+        position: absolute;
+        top: calc(100% + 5px);
+        min-width: 200px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        z-index: 200;
+        overflow: hidden;
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    .mobile-lang-dropdown .mobile-dropdown-content {
+        left: 0;
+    }
+
+    .mobile-page-dropdown .mobile-dropdown-content {
+        right: 0;
+    }
+
+    .mobile-dropdown-content.show {
+        display: block;
+    }
+
+    /* ---------- ПУНКТ ВЫПАДАЮЩЕГО СПИСКА ---------- */
+    .mobile-dropdown-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 15px;
+        color: #333;
+    }
+
+    .mobile-dropdown-item:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-dropdown-item:hover {
+        background: #f5f0eb;
+    }
+
+    .mobile-dropdown-item.active {
+        background: #e8e8e8;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .mobile-item-code {
+        font-size: 13px;
+        font-weight: 700;
+        color: #888;
+        min-width: 28px;
+    }
+
+    .mobile-dropdown-item.active .mobile-item-code {
+        color: #4a9eff;
+    }
+
+    .mobile-item-name {
+        flex: 1;
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    /* ---------- ТЕЛО ---------- */
+    body {
+        flex-direction: column;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    /* ---------- ОСНОВНОЙ КОНТЕНТ ---------- */
+    .main-content {
+        padding: 10px 12px 30px 12px;
+        min-height: calc(100vh - 60px);
+        height: auto;
+        overflow-y: visible;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ---------- СКРЫВАЕМ ЗАГОЛОВОК СТРАНИЦЫ ---------- */
+    .main-content h1 {
+        display: none !important;
+    }
+
+    /* ---------- КОЛОНКИ ---------- */
+    .columns-container {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;
+        height: auto !important;
+        min-height: 0 !important;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* ---------- ВСЕ КОЛОНКИ ---------- */
+    .column-card:nth-child(1),
+    .column-card:nth-child(2),
+    .column-card:nth-child(3) {
+        display: flex !important;
+        flex-direction: column;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        margin: 0;
+        padding: 16px 18px;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        background: white;
+        overflow: visible;
+        flex-shrink: 0;
+    }
+
+    /* ---------- 2-я КОЛОНКА (первая сверху) ---------- */
+    .column-card:nth-child(2) {
+        order: -1;
+        border: 2px solid #e8e8e8;
+    }
+
+    .column-card:nth-child(1) {
+        order: 0;
+    }
+
+    .column-card:nth-child(3) {
+        order: 1;
+    }
+
+    /* ---------- ЗАГОЛОВОК КОЛОНКИ ---------- */
+    .column-header {
+        font-size: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        flex-shrink: 0;
+    }
+
+    /* ---------- СОДЕРЖИМОЕ КОЛОНКИ ---------- */
+    .column-scroll {
+        font-size: 18px;
+        line-height: 1.6;
+        padding-right: 0;
+        flex: 0 1 auto;
+        overflow: visible !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    /* ---------- ТАБЛИЦА ---------- */
+    .column-table {
+        font-size: 18px;
+        border: none;
+        width: 100%;
+    }
+
+    .column-table td {
+        padding: 12px 6px;
+        font-size: 18px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* ---------- КАРТИНКИ ---------- */
+    .img-left,
+    .img-right {
+        float: none !important;
+        display: block;
+        margin: 10px auto !important;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .column-table a {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   ЛАНДШАФТ НА ТЕЛЕФОНАХ (≤ 900px) — ФИКСИРОВАННОЕ МЕНЮ
+   ============================================ */
+@media (max-width: 900px) and (orientation: landscape) {
+    /* ---------- МЕНЮ (ФИКСИРОВАННОЕ) ---------- */
+    .vertical-menu {
+        position: fixed !important;
+        left: 0;
+        top: 0;
+        width: 200px;
+        height: 100vh;
+        background: #e8e8e8;
+        padding: 12px 10px;
+        display: flex !important;
+        flex-direction: column;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        flex-shrink: 0;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .language-selector {
+        margin-bottom: 10px;
+        flex-shrink: 0;
+    }
+
+    .language-selector select {
+        padding: 6px 10px;
+        font-size: 13px;
+        border-radius: 8px;
+        background: #ffffff;
+        color: #333333;
+        border: 2px solid rgba(0,0,0,0.15);
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 14px;
+    }
+
+    .nav-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+        overflow-y: auto;
+        min-height: 0;
+        padding-right: 2px;
+    }
+
+    .nav-btn {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 8px;
+        background: rgba(0,0,0,0.05);
+        color: #555555;
+        font-size: 13px;
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        line-height: 1.3;
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+
+    .nav-btn .btn-text {
+        display: block;
+        width: 100%;
+        word-wrap: break-word;
+        white-space: normal;
+        line-height: 1.3;
+        font-size: 13px;
+    }
+
+    .nav-btn:hover {
+        background: rgba(184, 168, 138, 0.2);
+        color: #333333;
+        transform: translateX(3px);
+    }
+
+    .nav-btn.active {
+        background: #c8c8c8 !important;
+        color: #222222 !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        transform: translateX(3px);
+    }
+
+    .nav-btn.active::before {
+        content: '▸';
+        position: absolute;
+        left: -3px;
+        color: #999999;
+        font-size: 16px;
+    }
+
+    /* ---------- СКРЫВАЕМ МОБИЛЬНОЕ МЕНЮ ---------- */
+    .mobile-language-selector {
+        display: none !important;
+    }
+
+    /* ---------- ТЕЛО ---------- */
+    body {
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    /* ---------- ОСНОВНОЙ КОНТЕНТ (С ОТСТУПОМ ПОД МЕНЮ) ---------- */
+    .main-content {
+        flex: 1;
+        padding: 12px 20px 30px 20px;
+        min-height: 100vh;
+        height: auto;
+        overflow-y: visible;
+        display: flex;
+        flex-direction: column;
+        margin-left: 200px;           /* Отступ под фиксированное меню */
+    }
+
+    /* ---------- ПОКАЗЫВАЕМ ЗАГОЛОВОК ---------- */
+    .main-content h1 {
+        display: block !important;
+        font-size: 22px;
+        margin-bottom: 15px;
+        flex-shrink: 0;
+    }
+
+    /* ---------- КОЛОНКИ ---------- */
+    .columns-container {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;                /* Отступ между колонками */
+        height: auto !important;   /* Автоматическая высота */
+        min-height: 0 !important;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* ---------- ПОКАЗЫВАЕМ ВСЕ КОЛОНКИ ---------- */
+    .column-card:nth-child(1),
+    .column-card:nth-child(2),
+    .column-card:nth-child(3) {
+        display: flex !important;
+        flex-direction: column;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;          /* Автоматическая высота */
+        min-height: 0 !important;
+        max-height: none !important;      /* Убираем ограничение высоты */
+        margin: 0;
+        padding: 14px 16px;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        background: white;
+        overflow: visible;                /* Убираем скрытие переполнения */
+        flex-shrink: 0;
+    }
+
+    /* ---------- 2-я КОЛОНКА (первая сверху) ---------- */
+    .column-card:nth-child(2) {
+        order: -1;                        /* Поднимаем наверх */
+        border: 2px solid #e8e8e8;
+    }
+
+    /* ---------- 1-я КОЛОНКА (вторая сверху) ---------- */
+    .column-card:nth-child(1) {
+        order: 0;                         /* Естественный порядок */
+    }
+
+    /* ---------- 3-я КОЛОНКА (третья сверху) ---------- */
+    .column-card:nth-child(3) {
+        order: 1;                         /* Опускаем вниз */
+    }
+
+    /* ---------- ЗАГОЛОВОК КОЛОНКИ ---------- */
+    .column-header {
+        font-size: 18px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        flex-shrink: 0;
+    }
+
+    /* ---------- СОДЕРЖИМОЕ КОЛОНКИ ---------- */
+    .column-scroll {
+        font-size: 16px;
+        line-height: 1.5;
+        padding-right: 0;
+        flex: 0 1 auto;                  /* Не растягивается, только по контенту */
+        overflow: visible !important;    /* Убираем прокрутку */
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        color: #333;
+    }
+
+    /* ---------- ТАБЛИЦА ---------- */
+    .column-table {
+        font-size: 16px;
+        border: none;
+        width: 100%;
+    }
+
+    .column-table td {
+        padding: 10px 6px;
+        font-size: 16px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* ---------- КАРТИНКИ ---------- */
+    .img-left,
+    .img-right {
+        float: none !important;
+        display: block;
+        margin: 8px auto !important;
+        max-width: 70%;
+        height: auto;
+    }
+
+    /* ---------- ССЫЛКИ ---------- */
+    .column-table a {
+        font-size: 16px;
+    }
+
+    /* ---------- СКРОЛЛБАР ДЛЯ МЕНЮ ---------- */
+    .vertical-menu::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .vertical-menu::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    .vertical-menu::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+
+    .vertical-menu::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+
+    .nav-buttons::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .nav-buttons::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    .nav-buttons::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+
+    .nav-buttons::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+}
+
+/* Большие экраны (≥ 1400px) */
+@media (min-width: 1400px) {
+    .columns-container {
+        gap: 25px;
+    }
+    .column-table td {
+        padding: 14px 12px;
+        font-size: 15px;
+    }
+    .column-header {
+        font-size: 18px;
+    }
+}
