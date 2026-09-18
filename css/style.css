@@ -271,14 +271,15 @@ body {
 }
 
 /* ============================================
-   КОНТЕЙНЕР С КОЛОНКАМИ
+   КОНТЕЙНЕР С КОЛОНКАМИ — ДВЕ КОЛОНКИ НА ДЕСКТОПЕ
    ============================================ */
 .columns-container {
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;  /* Две равные колонки */
     gap: 20px;
     min-height: 0;
+    width: 100%;
 }
 
 .column-card {
@@ -355,15 +356,10 @@ body {
    АДАПТИВНОСТЬ
    ============================================ */
 
-/* 3 колонки — по умолчанию */
-
-/* 2 колонки (769–1100px) */
+/* Планшеты (769–1100px) — две колонки остаются */
 @media (max-width: 1100px) and (min-width: 769px) {
     .columns-container {
         grid-template-columns: 1fr 1fr;
-    }
-    .column-card:nth-child(3) {
-        display: none !important;
     }
     .vertical-menu {
         display: flex !important;
@@ -374,7 +370,7 @@ body {
 }
 
 /* ============================================
-   МОБИЛЬНАЯ ВЕРСИЯ (≤ 768px)
+   МОБИЛЬНАЯ ВЕРСИЯ (≤ 768px) — одна колонка
    ============================================ */
 @media (max-width: 768px) {
     /* ---------- СКРЫВАЕМ ДЕСКТОПНОЕ МЕНЮ ---------- */
@@ -553,7 +549,7 @@ body {
         display: none !important;
     }
 
-    /* ---------- КОЛОНКИ ---------- */
+    /* ---------- КОЛОНКИ — ОДНА КОЛОНКА НА МОБИЛЬНОМ ---------- */
     .columns-container {
         display: flex !important;
         flex-direction: column;
@@ -567,8 +563,7 @@ body {
 
     /* ---------- ВСЕ КОЛОНКИ ---------- */
     .column-card:nth-child(1),
-    .column-card:nth-child(2),
-    .column-card:nth-child(3) {
+    .column-card:nth-child(2) {
         display: flex !important;
         flex-direction: column;
         width: 100% !important;
@@ -593,10 +588,6 @@ body {
 
     .column-card:nth-child(1) {
         order: 0;
-    }
-
-    .column-card:nth-child(3) {
-        order: 1;
     }
 
     /* ---------- ЗАГОЛОВОК КОЛОНКИ ---------- */
@@ -771,7 +762,7 @@ body {
         overflow-y: visible;
         display: flex;
         flex-direction: column;
-        margin-left: 200px;           /* Отступ под фиксированное меню */
+        margin-left: 200px;
     }
 
     /* ---------- ПОКАЗЫВАЕМ ЗАГОЛОВОК ---------- */
@@ -782,52 +773,46 @@ body {
         flex-shrink: 0;
     }
 
-    /* ---------- КОЛОНКИ ---------- */
+    /* ---------- КОЛОНКИ — ОДНА КОЛОНКА В ЛАНДШАФТЕ ---------- */
     .columns-container {
         display: flex !important;
         flex-direction: column;
-        gap: 20px;                /* Отступ между колонками */
-        height: auto !important;   /* Автоматическая высота */
+        gap: 20px;
+        height: auto !important;
         min-height: 0 !important;
         width: 100%;
         padding: 0;
         margin: 0;
     }
 
-    /* ---------- ПОКАЗЫВАЕМ ВСЕ КОЛОНКИ ---------- */
+    /* ---------- ВСЕ КОЛОНКИ ---------- */
     .column-card:nth-child(1),
-    .column-card:nth-child(2),
-    .column-card:nth-child(3) {
+    .column-card:nth-child(2) {
         display: flex !important;
         flex-direction: column;
         width: 100% !important;
         max-width: 100% !important;
-        height: auto !important;          /* Автоматическая высота */
+        height: auto !important;
         min-height: 0 !important;
-        max-height: none !important;      /* Убираем ограничение высоты */
+        max-height: none !important;
         margin: 0;
         padding: 14px 16px;
         border-radius: 12px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
         background: white;
-        overflow: visible;                /* Убираем скрытие переполнения */
+        overflow: visible;
         flex-shrink: 0;
     }
 
     /* ---------- 2-я КОЛОНКА (первая сверху) ---------- */
     .column-card:nth-child(2) {
-        order: -1;                        /* Поднимаем наверх */
+        order: -1;
         border: 2px solid #e8e8e8;
     }
 
     /* ---------- 1-я КОЛОНКА (вторая сверху) ---------- */
     .column-card:nth-child(1) {
-        order: 0;                         /* Естественный порядок */
-    }
-
-    /* ---------- 3-я КОЛОНКА (третья сверху) ---------- */
-    .column-card:nth-child(3) {
-        order: 1;                         /* Опускаем вниз */
+        order: 0;
     }
 
     /* ---------- ЗАГОЛОВОК КОЛОНКИ ---------- */
@@ -843,8 +828,8 @@ body {
         font-size: 16px;
         line-height: 1.5;
         padding-right: 0;
-        flex: 0 1 auto;                  /* Не растягивается, только по контенту */
-        overflow: visible !important;    /* Убираем прокрутку */
+        flex: 0 1 auto;
+        overflow: visible !important;
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;
