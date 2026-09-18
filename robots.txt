@@ -1,0 +1,6 @@
+# Разрешаем всем поисковикам индексировать сайт
+User-agent: *
+Allow: /
+
+# Указываем путь к карте сайта
+Sitemap: https://inform.com.ge/sitemap.xml
