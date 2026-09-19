@@ -252,3 +252,25 @@
     }
 
 })();
+
+// ------- JavaScript для копирования кода примеров 1С
+function copyCode(button) {
+    const codeBlock = button.closest('.code-block');
+    const code = codeBlock.querySelector('code').innerText;
+
+    navigator.clipboard.writeText(code).then(() => {
+        // Меняем текст и иконку
+        const label = button.querySelector('span');
+        const originalText = label.textContent;
+
+        button.classList.add('copied');
+        label.textContent = 'Скопировано!';
+
+        setTimeout(() => {
+            button.classList.remove('copied');
+            label.textContent = originalText;
+        }, 2000);
+    }).catch(err => {
+        console.error('Ошибка копирования:', err);
+    });
+}
