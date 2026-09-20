@@ -40,7 +40,8 @@
     const pagesConfig = [
         { id: 'index',   btn: 'Старт' },
         { id: 'Lesson1', btn: 'Урок 1' },
-        { id: 'Lesson2', btn: 'Урок 2' }
+        { id: 'Lesson2', btn: 'Урок 2' },
+        { id: 'Lesson3', btn: 'Урок 3' }
     ];
 
     // ============================================
