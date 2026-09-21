@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Бесплатно. Уроки по программированию 1С. Платформа 1C. Конфигурация. Прикладные решения ,программы</title>
     <meta name="description" content="Бесплатно. Уроки по 1С  это обучающие материалы для освоения платформы автоматизации бизнеса. Изучение синтаксиса и создание собственных конфигураций.">
-    <meta name="keywords" content="Бесплатно, 1с, уроки, обучение, бесплатно, самоучитель, программирование, бухгалтерия, конфигурация, платформа, видеоуроки, курсы, новички, программист, конфигуратор, разработка, база, код, функции, запросы, отчеты, формы, документы, справочники, регистры, модули, администрирование, предприятие, автоматизация, шпаргалка, примеры, задачи, теория, практика, основы, синтаксис, функции, переменные, отладка, обновления, файлы">
+    <meta name="keywords" content="бесплатно, 1с, уроки, обучение, бесплатно, самоучитель, программирование, бухгалтерия, конфигурация, платформа, видеоуроки, курсы, новички, программист, конфигуратор, разработка, база, код, функции, запросы, отчеты, формы, документы, справочники, регистры, модули, администрирование, предприятие, автоматизация, шпаргалка, примеры, задачи, теория, практика, основы, синтаксис, функции, переменные, отладка, обновления, файлы">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Бесплатно. Уроки по 1С  это обучающие материалы для освоения платформы автоматизации бизнеса. Изучение синтаксиса и создание собственных конфигураций.">
     <meta property="og:description" content="Бесплатно. Старт в 1C, практический мини-курс для новичков">
@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://inform.com.ge/Lesson3.html">
     <meta property="og:image" content="https://inform.com.ge/ikonka.jpg">
     <meta property="og:locale" content="ru_RU">
-    <meta property="og:site_name" content="Бесплатно. Старт в 1C">
+    <meta property="og:site_name" content="Бесплатно. Уроки по 1С">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Бесплатно. Старт в 1C, практический мини-курс для новичков">
     <meta name="twitter:description" content="Бесплатно. Уроки по 1С  это обучающие материалы для освоения платформы автоматизации бизнеса. Изучение синтаксиса и создание собственных конфигураций.">
@@ -38,187 +38,7 @@
         <div class="columns-container">
             <div class="column-card">
                 <div class="column-header">📋 Урок 3.1</div>
-                
-<table class="column-table">
-                       <tr><td><p class="text-center">Проведение документа: пишем движения в регистр</p>
-                      <p><img src="Video.png" alt="Справочники: первые «кирпичики» вашей конфигурации" width="100" height="100" class="img-center"></p>
-                      <p>Вот мы и подошли к самому интересному. В прошлом уроке мы создали регистр «Остатки товаров», но он стоит пустой, как склад без товаров. Сегодня мы научим <span class="text-sin">документ писать в регистр</span>. Это тот самый момент, когда учёт начинает «жить»: провели документ — и в регистре появилось движение.</p></td></tr>
-                        <tr><td><p class="text-sin">Немного теории: что такое проведение </p>
-                            <p class="column-table">В 1С у документа есть две операции, которые часто путают новички:</p>
-                            <p class="column-table"> <span class="text-sin">Запись</span> — документ просто сохраняется в базе. Дата, номер, реквизиты — всё на месте. Но <span class="text-sin">движений он не создаёт</span>. </p>
-                            <p class="column-table"><span class="text-sin">Проведение</span> — документ сохраняется и создаёт движения в регистрах. </p>
-                            <p class="column-table">&nbsp;</p>
-                            <p class="column-table">Проведённый документ помечается в журнале специальной иконкой (обычно зелёной галочкой или «птичкой»). Непроведённый — пустым квадратиком или другим значком. </p>
-                            <p class="column-table">&nbsp;</p>
-                            <p class="column-table">Проведение бывает: </p>
-                            <p class="column-table"><span class="text-sin">Оперативное</span> — обычное, стандартное. </p>
-                            <p class="column-table"><span class="text-sin">Неоперативное</span> — используется в сложных случаях (например, при закрытии месяца).</p>
-                            <p class="column-table">&nbsp;</p>
-                      <p class="column-table"> Нам пока хватит обычного, оперативного.</p></td></tr>
-                        <tr>
-                          <td><ul>
-                            <li class="text-sin">Шаг 1. Открываем модуль объекта документа </li>
-                            <li class="column-table">Движения пишутся <span class="text-sin">в модуле объекта документа</span>. Это то самое место, где живёт код, отвечающий за логику документа. </li>
-                            <li class="column-table">В дереве конфигурации разверните документ <span class="text-sin">«ПоступлениеТоваров»</span>. </li>
-                            <li class="column-table">Найдите ветку<span class="text-sin"> «Модуль объекта»</span> — или, если её не видно, откройте <span class="text-sin">«Модуль объекта»</span> через правую кнопку по самому документу → <span class="text-sin">«Открыть модуль объекта»</span>. </li>
-                            <li class="column-table"></li>
-                            <li class="column-table">Перед вами откроется редактор кода. Скорее всего, там уже есть заготовки:</li>
-                            <li class="column-table">
-                              <div class="code-block">
-                                <div class="code-header"> <span class="code-lang">1C</span>
-                                  <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                    </svg> <span>Копировать</span></button>
-                                </div>
-                                <pre>Процедура ОбработкаПроведения(Отказ, РежимПроведения) 
-     
-КонецПроцедуры 
-
-Процедура ОбработкаЗаполнения(Основание)      
-
-КонецПроцедуры</pre>
-                              </div>
-                            </li>
-                            <li class="column-table">Нас интересует ОбработкаПроведения — именно эта процедура вызывается, когда документ проводится. Всё, что мы напишем внутри, выполнится в момент проведения. </li>
-                            <li class="column-table"></li>
-                            <li class="column-table">💡 Если заготовки нет — не страшно, просто создайте процедуру с таким же именем вручную. 1С поймёт. </li>
-                      </ul></td></tr>
-                        <tr><td><ul>
-                          <li class="text-sin">Шаг 2. Первая простая логика проведения </li>
-                          <li class="column-table">Прежде чем писать движения, давайте разберёмся, что вообще должно произойти. </li>
-                          <li class="column-table"></li>
-                          <li class="column-table">Наш документ «Поступление товаров» описывает приход товара на склад. Значит, для каждой строки табличной части мы должны: </li>
-                          <li class="column-table">Взять товар. </li>
-                          <li class="column-table">Взять количество. </li>
-                          <li class="column-table">Записать это в регистр как <span class="text-sin">приход</span>. </li>
-                          <li class="column-table"></li>
-                          <li class="column-table">В 1С для этого есть специальный объект — Движения. Он живёт внутри документа и автоматически доступен в процедуре проведения. </li>
-                          <li class="column-table"></li>
-                          <li class="text-sin">Схема работы такая: </li>
-                          <li class="column-table">Очищаем старые движения (если документ проводился раньше). </li>
-                          <li class="column-table">Проходим по строкам табличной части. </li>
-                          <li class="column-table">Для каждой строки создаём новое движение и заполняем его поля. </li>
-                          <li class="column-table">Записываем движения.</li>
-                      </ul></td></tr>
-                        <tr><td><ul>
-                          <li class="text-sin">Шаг 3. Пишем код проведения </li>
-                          <li class="column-table">Открываем модуль объекта и пишем:</li>
-                          <li class="column-table">
-                            <div class="code-block">
-                              <div class="code-header"> <span class="code-lang">1C</span>
-                                <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                  </svg> <span>Копировать</span></button>
-                              </div>
-                              <pre>Процедура ОбработкаПроведения(Отказ, РежимПроведения)
-// 1. Очищаем старые движения     
-Движения.ОстаткиТоваров.Очистить();
-// 2. Проходим по строкам табличной части     
-Для Каждого Строка Из СписокТоваров Цикл
-// 3. Создаём новое движение
-Движение = Движения.ОстаткиТоваров.Добавить();
-Движение.ВидДвижения = ВидДвиженияНакопления.Приход;
-Движение.Период = Дата;
-Движение.Товар = Строка.Товар;
-Движение.Количество = Строка.Количество;              
-КонецЦикла;
-// 4. Записываем движения
-Движения.Записать();  
-КонецПроцедуры</pre>
-                            </div>
-                          </li>
-                          <li class="column-table">Разберём построчно, что здесь происходит: </li>
-                          <li class="column-table">Движения.ОстаткиТоваров.Очистить() — удаляем все движения, которые документ мог создать раньше. Это важно: если вы перепроведёте документ, старые движения не должны дублироваться. В противном случае товар будет «приходить» дважды, и остатки станут неправильными. </li>
-                          <li class="column-table">Для Каждого Строка Из СписокТоваров Цикл — цикл по всем строкам табличной части. СписокТоваров — это имя нашей табличной части. </li>
-                          <li class="column-table">Движение = Движения.ОстаткиТоваров.Добавить() — создаём новое пустое движение в регистре «ОстаткиТоваров». </li>
-                          <li class="column-table">Движение.ВидДвижения = ВидДвиженияНакопления.Приход — говорим, что это приход. У регистра есть два вида: приход и расход. Для поступления — приход. </li>
-                          <li class="column-table">Движение.Период = Дата — ставим дату документа. Дата — стандартный реквизит любого документа. </li>
-                          <li class="column-table">Движение.Товар = Строка.Товар и Движение.Количество = Строка.Количество — заполняем измерение и ресурс. </li>
-                          <li class="column-table">Движения.Записать() — сохраняем все движения в базу. Без этой строчки ничего не запишется — как если бы вы написали письмо и забыли нажать «Отправить».</li>
-                          <li class="column-table"></li>
-                          <li class="column-table"> 💡 <span class="text-sin">Обратите внимание</span>: мы используем <span class="text-sin">точку</span> для доступа к полям. Строка.Товар означает «поле Товар в текущей строке табличной части». Просто и логично.</li>
-                      </ul></td></tr>
-                        <tr><td><ul>
-                          <li class="text-sin">Шаг 4. Сохраняем, обновляем, проверяем </li>
-                          <li class="column-table">Сохраняем модуль: <span class="text-sin">Ctrl+S</span>. </li>
-                          <li class="column-table">Обновляем базу: <span class="text-sin">F7</span>. </li>
-                          <li class="column-table">Запускаем пользовательский режим: <span class="text-sin">F5</span>. </li>
-                          <li class="column-table"></li>
-                          <li class="column-table">Открываем документ «Поступление товаров» и создаём новый. </li>
-                          <li class="text-sin">Заполняем: </li>
-                          <li class="column-table">Контрагент: ООО &quot;Ромашка&quot; </li>
-                          <li class="column-table">В табличной части: «Чайник электрический», количество 5, цена 2500. </li>
-                          <li class="column-table"></li>
-                          <li class="column-table"><span class="text-sin">Проводим документ</span> — нажимаем кнопку <span class="text-sin">«Провести»</span> (или «<span class="text-sin">Провести и закрыть»</span>). В журнале документ должен отметиться как проведённый.</li>
-                          <li class="column-table"></li>
-                          <li class="column-table"> Теперь открываем регистр: <span class="text-sin">«Все функции» → «Регистры накопления» → «Остатки товаров»</span>. И видим... <span class="text-sin">движение</span>! Товар «Чайник электрический», количество 5. 🎉 </li>
-                          <li class="column-table"></li>
-                          <li class="column-table">Если вы создадите ещё один документ поступления — появится ещё одна запись. А если откроете <span class="text-sin">виртуальную таблицу «Остатки»</span>, 1С сама сложит все движения и покажет: на складе 5 + столько-то = столько-то. Магия регистров в действии!</li>
-                      </ul></td></tr>
-                        <tr><td><ul>
-                          <li class="text-sin">Шаг 5. Проверяем, что всё работает правильно </li>
-                          <li class="column-table">Пара полезных экспериментов, которые стоит сделать прямо сейчас: </li>
-                          <li class="text-sin">Эксперимент 1. Перепроведение. </li>
-                          <li class="column-table">Откройте проведённый документ. </li>
-                          <li class="column-table">Поменяйте количество с 5 на 10. </li>
-                          <li class="column-table">Проведите заново. </li>
-                          <li class="column-table">Посмотрите в регистр. Должно быть одно движение с количеством 10, а не два (старое + новое). Если так — значит, Очистить() работает как надо. 👏 </li>
-                          <li class="column-table"></li>
-                          <li class="column-table"><span class="text-sin">Эксперимент 2. Отмена проведения.</span> </li>
-                          <li class="column-table">Откройте документ. </li>
-                          <li class="column-table">Нажмите <span class="text-sin">«Отменить проведение»</span>. </li>
-                          <li class="column-table">Посмотрите в регистр — движения должны исчезнуть. </li>
-                          <li class="column-table"></li>
-                          <li class="column-table">Это важное свойство: проведение и отмена проведения <span class="text-sin">синхронизированы</span>. Если документ не проведён — он не влияет на регистры. Это одна из главных идей всей 1С.</li>
-                      </ul></td></tr>
-                        <tr><td><ul>
-                          <li class="text-sin">Шаг 6. Что делать с расходом </li>
-                          <li class="column-table">Логично, что скоро нам захочется списывать товар — например, при продаже. Тогда мы создадим документ «Реализация товаров» и в его проведении будем писать:</li>
-                          </ul>
-                          <div class="code-block">
-                            <div class="code-header"> <span class="code-lang">1C</span>
-                                <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                  </svg> <span>Копировать</span></button>
-                              </div>
-                              <pre>Движение.ВидДвижения = ВидДвиженияНакопления.Расход;</pre>
-                          </div>
-                          <p>Всё остальное — почти так же. Регистр сам вычтет расход из прихода, и остаток уменьшится. Пока не делаем, но держим в голове: регистр «Остатки» — это простой баланс «приход минус расход».</p></td></tr>
-                        <tr>
-                          <td><p class="text-sin">Мини-итог </p>
-                          <p class="column-table">Сегодня вы: </p>
-                          <p class="column-table">Узнали, чем запись документа отличается от проведения. </p>
-                          <p class="column-table">Открыли модуль объекта документа и нашли процедуру ОбработкаПроведения. </p>
-                          <p class="column-table">Написали код, который создаёт движения в регистре при проведении. </p>
-                          <p class="column-table">Поняли, зачем нужна Очистить() и что такое ВидДвижения. </p>
-                          <p class="column-table">Убедились, что при перепроведении движения не дублируются, а при отмене — исчезают. </p>
-                          <p class="column-table">&nbsp;</p>
-                          <p class="column-table">Это, пожалуй, <span class="text-sin">самый важный урок</span> из всех, что были. Именно здесь 1С превращается из «игрушки со справочниками» в настоящую учётную систему. Поздравляю — вы перешли на новый уровень! 🚀</p></td>
-                        </tr>
-                        <tr><td><ul>
-                          <li class="text-sin">Что дальше? </li>
-                          <li class="column-table">В следующем уроке мы: </li>
-                          <li class="column-table">Сделаем первый отчёт — покажем остатки товаров на складе в удобном виде. </li>
-                          <li class="column-table">Познакомимся с виртуальными таблицами регистра (Остатки, Обороты). </li>
-                          <li class="column-table">Узнаем, что такое запрос на языке 1С и почему он — лучший друг разработчика. </li>
-                          <li class="column-table"></li>
-                          <li class="column-table">А пока — потренируйтесь: создайте документ<span class="text-sin"> «Реализация товаров»</span> по аналогии с поступлением, но с расходом. Не бойтесь ошибиться — исправить всегда можно перепроведением. 😉 </li>
-                          <li class="column-table"></li>
-                          <li class="column-table">До встречи! 👋 И помните: регистр — это память системы. А память — это святое. </li>
-                      </ul></td></tr>
-                    </table>
-                
-                
-            </div>
-
-            <div class="column-card">
-                <div class="column-header">📋 Урок 3.2</div>
-                
-                
-                <div class="column-scroll">
+       <div class="column-scroll">
                     <table class="column-table">
                        <tr><td><p class="text-center">Проведение документа: пишем движения в регистр</p>
                       <p><img src="Video.png" alt="Справочники: первые «кирпичики» вашей конфигурации" width="100" height="100" class="img-center"></p>
@@ -389,6 +209,255 @@
                           <li class="column-table"></li>
                           <li class="column-table">До встречи! 👋 И помните: регистр — это память системы. А память — это святое. </li>
                       </ul></td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="column-card">
+                <div class="column-header">📋 Урок 3.2</div>
+   
+   <div class="column-scroll">
+                    <table class="column-table">
+                       <tr><td><p class="text-center">Передышка: разбираемся, что мы вообще писали</p>
+                      <p><img src="Video.png" alt="Справочники: первые «кирпичики» вашей конфигурации" width="100" height="100" class="img-center"></p>
+                      <p>Добрый день! ☀️</p>
+                      <p> Мы с вами прошли уже несколько уроков. Создали справочник, документ, регистр, написали код проведения. И всё это время — если быть честным — <span class="text-sin">мы делали, но не всегда понимали</span>. Это нормально: так учатся все. Сначала руки запоминают, потом голова догоняет. </p>
+                      <p>Сегодня — <span class="text-sin">передышка</span>. Мы не будем создавать ничего нового. Вместо этого оглянемся назад и разберёмся: а что это вообще было? Что за типы данных? Что за Для Каждого? Почему код живёт в разных модулях и что это за модули такие? </p>
+                      <p>Не пугайтесь — это не скучная теория. Это <span class="text-sin">расшифровка того, что вы уже умеете делать</span>. Как будто после долгой поездки на машине вы наконец открыли капот и посмотрели, что там устроено. </p>
+                      <p>Поехали!</p></td></tr>
+                        <tr>
+                          <td><p class="text-sin">1. Типы данных: из чего сделаны все значения </p>
+                          <p>В 1С у каждого значения есть <span class="text-sin">тип</span>. Тип — это «порода» данных: число, строка, дата и так далее. От типа зависит, что с этим значением можно делать. </p>
+                          <p class="text-sin">Основные типы, которые вы уже встречали (даже если не замечали):</p>
+                          <p class="column-table"><span class="text-sin">Число</span> - Числа, целые и дробные. Примеры: 2500, 3.5, 0 </p>
+                          <p class="column-table"><span class="text-sin">Строка</span> -Текст в кавычках.	Примеры:&quot;Чайник&quot;, &quot;Hello, World!&quot; </p>
+                          <p class="column-table"><span class="text-sin">Дата</span> - Дата и время.	Примеры: '20250101', ТекущаяДата() </p>
+                          <p class="column-table"><span class="text-sin">Булево</span> - Истина или Ложь.	Примеры: Истина, Ложь </p>
+                          <p class="column-table"><span class="text-sin">Ссылка</span> - Ссылка на объект (элемент справочника, документ и т.д.).	Пример Справочники.Товары.НайтиПоНаименованию(&quot;Чайник&quot;) </p>
+                          <p class="column-table"><span class="text-sin">Неопределено</span> - «Пустое» значение, когда ничего нет	Неопределено </p>
+                          <p class="column-table"><span class="text-sin">Null</span> Пустое значение из базы данных (отдельная история)	Null</p>
+                          <p class="column-table">&nbsp;</p>
+                          <p class="column-table"><span class="text-sin">Почему это важно.</span> Если вы попытаетесь сложить строку с числом — 1С может либо выдать ошибку, либо сделать что-то не то. Если попытаетесь вызвать реквизит у значения, у которого его нет, — тоже ошибка. Тип определяет, что можно, а что нельзя. </p>
+                          <p class="column-table">&nbsp;</p>
+                          <p class="column-table"><span class="text-sin">Как узнать тип значения программно?</span> Есть функция ТипЗнч():</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Значение = 2500; 
+Сообщить(ТипЗнч(Значение)); // Выведет: Число</pre>
+                          </div>
+                          <p>А ещё можно проверить тип через конструкцию Если ТипЗнч(Значение) = Тип(&quot;Число&quot;) Тогда.... Но пока это не критично — просто знайте, что механизм есть. </p>
+                          <p>&nbsp;</p>
+                          <p>💡<span class="text-sin"> Запомните</span>: тип — это «родословная» значения. Она определяет, какие операции допустимы, а какие приведут к ошибке.</p>
+                          <p class="column-table">&nbsp;</p></td>
+                        </tr>
+                        <tr>
+                          <td><p class="text-sin">2. Переменные: коробочки для значений </p>
+                          <p><span class="text-sin">Переменная</span> — это именованная «коробочка», в которой лежит значение. Вы уже пользовались переменными, даже не задумываясь:</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Движение = Движения.ОстаткиТоваров.Добавить();</pre>
+                          </div>
+                          <p>Здесь <span class="text-sin">Движение</span> — это переменная. Мы положили в неё новое движение и дальше с ним работаем. </p>
+                          <p>&nbsp;</p>
+                          <p class="text-sin">Особенности 1С: </p>
+                          <p>Объявлять переменные необязательно заранее (в отличие от C++ или Java). Написали</p>
+                          <p> Значение = 5; — и переменная появилась. </p>
+                          <p>Но если хочется порядка, можно объявить явно в начале модуля:</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Перем Счётчик;</pre>
+                          </div>
+                          <p>Регистр в именах переменных <span class="text-sin">не важен:</span> Счётчик и счётчик — одно и то же. Но принято писать с большой буквы. </p>
+                          <p>&nbsp;</p>
+                          <p><span class="text-sin">Зачем они нужны?</span> Чтобы не повторять одно и то же выражение по сто раз и хранить промежуточный результат. Классика.</p>
+                          <p>&nbsp;</p></td>
+                        </tr>
+                        <tr>
+                          <td><p class="text-sin">3. Синтаксис: почему всё так «по-русски» </p>
+                          <p>1С — один из немногих языков, где ключевые слова <span class="text-sin">на русском</span>. Это сначала кажется странным, а потом становится удобным (особенно когда читаешь чужой код). </p>
+                          <p>&nbsp;</p>
+                          <p class="text-sin">Главные правила: </p>
+                          <p><span class="text-sin">* Каждая команда заканчивается точкой с запятой.</span> Забыли — ошибка. 1С строгая.</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Сообщить("Привет"); // Точка с запятой — обязательна</pre>
+                          </div>
+                          <p><span class="text-sin">* Цикл по коллекции</span> — тот самый Для Каждого, которым мы пользовались:</p>
+                          <p>&nbsp;</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Для Каждого Строка Из СписокТоваров Цикл
+      Сообщить(Строка.Товар);  
+КонецЦикла;</pre>
+                          </div>
+                          <p><span class="text-sin">* Цикл «пока»</span> — если нужно повторять, пока условие истинно:</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Пока Счётчик &lt; 10 Цикл     
+Счётчик = Счётчик + 1; 
+КонецЦикла;</pre>
+                          </div>
+                          <p><span class="text-sin">* Комментарии</span> начинаются с //. Всё, что после них до конца строки, 1С игнорирует.</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>// Это комментарий, тут можно писать что угодно</pre>
+                          </div>
+                          <p><span class="text-sin">Почему именно так?</span> Так задумано авторами платформы. Логика: код должен читаться почти как русский текст. Спорно, но привыкаешь быстро.</p></td>
+                        </tr>
+                        <tr>
+                          <td><p class="text-sin">4. Модули: где живёт код и почему именно там </p>
+                          <p>Вот это, пожалуй, самое важное для понимания. Новички часто не понимают:<span class="text-sin"> почему в одном месте код работает, а в другом — нет?</span> Ответ: потому что модули разные, и у каждого — свои правила. </p>
+                          <p><span class="text-sin">Что такое модуль?</span> Это файл с кодом, привязанный к какому-то объекту (документу, форме, справочнику).</p>
+                          <p>&nbsp;</p>
+                          <p class="text-sin"> Какие модули мы уже встречали:</p>
+                          <p class="column-table"><span class="text-sin">Модуль объекта</span> - Внутри документа/справочника	/ Логика самого объекта: проведение, заполнение, проверки. </p>
+                          <p class="column-table"><span class="text-sin">Модуль формы</span> - Внутри формы	/ Логика интерфейса: нажатия кнопок, изменения полей.</p></td>
+                        </tr>
+                        <tr>
+                          <td><p><span class="text-sin">Главное правило:</span> код видит только то, что доступно<span class="text-sin"> в его модуле.</span> </p>
+                          <p>В <span class="text-sin">модуле объекта документа</span> доступны реквизиты документа и Движения. Поэтому код проведения живёт именно там. </p>
+                          <p>В <span class="text-sin">модуле формы</span> доступны Элементы формы (поля, кнопки) и реквизиты, выведенные на форму. Но там нет Движения — потому что движения к форме не относятся. </p>
+                          <p>&nbsp;</p>
+                          <p><span class="text-sin">Простой пример</span>. Вот почему наш код проведения работал:</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Процедура ОбработкаПроведения(Отказ, РежимПроведения)
+     Движения.ОстаткиТоваров.Очистить();
+     ... 
+КонецПроцедуры</pre>
+                          </div>
+                          <p>Потому что мы написали его в <span class="text-sin">модуле объекта документа</span>. Если бы мы попытались написать то же самое в модуле формы — 1С бы сказала: «А что такое Движения? Не знаю такого». Потому что в контексте формы движений нет. </p>
+                          <p>💡 <span class="text-sin">Запомните:</span> модуль — это «комната» с кодом. В каждой комнате свои предметы. Нельзя взять предмет из другой комнаты, не выйдя из неё.</p>
+                          <p>&nbsp;</p></td>
+                        </tr>
+                        <tr>
+                          <td><p class="text-sin">5. Процедуры и функции: зачем разбивать код на куски </p>
+                          <p><span class="text-sin">Процедура</span> — это именованный блок кода, который можно вызывать. <span class="text-sin">Функция</span> — то же самое, но она <span class="text-sin">возвращает результат</span>.</p>
+                          <p class="text-sin">Процедура:</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Процедура Поздороваться()
+      Сообщить("Привет!");
+КонецПроцедуры</pre>
+                          </div>
+                          <p class="text-sin">Функция:</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>Функция Удвоить(Число)
+     Возврат Число * 2;
+ КонецФункции</pre>
+                          </div>
+                          <p class="text-sin">Зачем это нужно? </p>
+                          <p>Чтобы не <span class="text-sin">повторять</span> один и тот же код сто раз. </p>
+                          <p>Чтобы код был <span class="text-sin">понятнее</span>: одна процедура — одна задача. </p>
+                          <p>Чтобы можно было <span class="text-sin">переиспользовать</span> логику в разных местах. </p>
+                          <p>&nbsp;</p>
+                          <p>Кстати, те заготовки, которые 1С сама создаёт (ОбработкаПроведения, СписокТоваровЦенаПриИзменении) — это тоже процедуры. Просто их <span class="text-sin">вызывает не вы</span>, а сама платформа, когда наступает нужное событие. Такие процедуры называются <span class="text-sin">обработчиками событий.</span></p></td>
+                        </tr>
+                        <tr>
+                          <td><p class="text-sin">6. Контекст выполнения: почему «здесь видно, а там нет» </p>
+                          <p>В 1С есть такое понятие —<span class="text-sin"> контекст</span>. Это «набор всего, что доступно в данном месте кода». </p>
+                          <p>В модуле объекта документа контекст включает: реквизиты документа, табличные части, Движения, ЭтотОбъект. </p>
+                          <p>В модуле формы контекст включает: Элементы формы, реквизиты формы, ЭтаФорма. </p>
+                          <p>В модуле табличной части контекст включает: Элементы (текущей строки), ТекущиеДанные. </p>
+                          <p>&nbsp;</p>
+                          <p><span class="text-sin">Почему это важно?</span> Потому что при написании кода нужно всегда спрашивать себя: «<span class="text-sin">А в каком модуле я нахожусь? Что мне тут доступно?</span>» Если что-то не работает — первым делом проверьте, там ли вы пишете. </p>
+                          <p>&nbsp;</p>
+                          <p><span class="text-sin">Небольшой лайфхак</span>: если набираете код и 1С не подсказывает нужное слово — значит, в этом контексте его нет. Либо вы не там, либо опечатка.</p></td>
+                        </tr>
+                        <tr>
+                          <td><p class="text-sin">7. Директивы компиляции: &amp;НаКлиенте, &amp;НаСервере </p>
+                          <p>В уроке 3 мы писали:</p>
+                          <div class="code-block">
+                            <div class="code-header"> <span class="code-lang">1C</span>
+                              <button class="copy-btn" onclick="copyCode(this)"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg> <span>Копировать</span></button>
+                            </div>
+                            <pre>&amp;НаКлиенте 
+Процедура Поздороваться(Команда)
+     Сообщить(&quot;Hello, World!&quot;); 
+КонецПроцедуры</pre>
+                          </div>
+                          <p>Что это за &amp;НаКлиенте? Это <span class="text-sin">директива компиляции</span>. Она говорит 1С: «Эта процедура выполняется на компьютере пользователя». </p>
+                          <p class="text-sin">В чём суть: </p>
+                          <p><span class="text-sin">Клиент </span>— это компьютер пользователя. Тут живут формы, кнопки, интерфейс. </p>
+                          <p><span class="text-sin">Сервер</span> — это место, где хранятся данные. Тут живут справочники, документы, регистры.</p>
+                          <p>&nbsp;</p>
+                          <p> В 1С код может выполняться <span class="text-sin">либо на клиенте, либо на сервере</span>. Нельзя просто так взять и обратиться к базе данных с клиента — нужно «сходить» на сервер. </p>
+                          <p>&nbsp;</p>
+                          <p class="text-sin">Директивы бывают: </p>
+                          <p><span class="text-sin">&amp;НаКлиенте</span> — только на клиенте. </p>
+                          <p><span class="text-sin">&amp;НаСервере</span> — только на сервере. </p>
+                          <p><span class="text-sin">&amp;НаСервереБезКонтекста</span> — на сервере, но без доступа к форме. </p>
+                          <p><span class="text-sin">&amp;НаКлиентеНаСервереБезКонтекста</span> — и там, и там (с ограничениями). </p>
+                          <p>&nbsp;</p>
+                          <p>Пока это можно просто знать. Мы вернёмся к этому, когда будем делать формы посложнее. А для документа, где весь код живёт на сервере, директивы вообще не нужны — по умолчанию модуль объекта «серверный».</p>
+                          <p>&nbsp;</p></td>
+                        </tr>
+                        <tr>
+                          <td><p class="text-sin">Мини-итог </p>
+                          <p>Сегодня вы: </p>
+                          <p>Разобрались с <span class="text-sin">типами данных</span> — Число, Строка, Дата, Булево, Ссылка. </p>
+                          <p>Вспомнили, что такое <span class="text-sin">переменные</span> и зачем они. </p>
+                          <p>Поняли <span class="text-sin">синтаксис 1С</span>: почему точки с запятой, КонецЕсли, Для Каждого. </p>
+                          <p>Узнали, что такое модули и почему код работает не везде одинаково. </p>
+                          <p>Осознали разницу между <span class="text-sin">процедурой и функцией</span>. </p>
+                          <p>Познакомились <span class="text-sin">с контекстом и директивами компиляции</span>. </p>
+                          <p>&nbsp;</p>
+                          <p>Это был урок <span class="text-sin">не про новое, а про понимание</span>. Теперь, когда вы снова откроете модуль проведения, вы будете видеть не магические строчки, а осмысленный код. А это — огромный шаг вперёд.</p></td>
+                        </tr>
                     </table>
                 </div>
             </div>
