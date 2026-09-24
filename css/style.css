@@ -279,6 +279,25 @@ body {
 	color: #039;
 }
 
+.text-prog {
+    color: #006600;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    line-height: 1.25;
+    margin: 0;
+    padding-left: 2em;
+    text-indent: -2em;
+    white-space: pre-line;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+
+    background: #f5f7fa;
+    padding: 6px 12px 6px 3em;   /* воздух вокруг */
+    border-radius: 4px;
+}
+
 /* ============================================
    КОНТЕЙНЕР С КОЛОНКАМИ — ДВЕ КОЛОНКИ НА ДЕСКТОПЕ
    ============================================ */
@@ -323,6 +342,8 @@ body {
 
 .column-table {
     width: 100%;
+    max-width: 100%;        /* ← не вылезать за родителя */
+    table-layout: fixed;    /* ← важно! таблица считает ширину от width, а не от содержимого */
     border-collapse: collapse;
     font-size: 14px;
     text-align: justify;
@@ -333,6 +354,16 @@ body {
     padding: 12px 8px;
     border-bottom: 1px solid #f0f0f0;
     color: #333;
+
+    /* ← вот это */
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.column-table p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .column-table tr:last-child td {
@@ -340,7 +371,8 @@ body {
 }
 
 .column-table tr:hover td {
-    background: #f8f9fa;
+	background: #f8f9fa;
+	/* color: #066; — убрано */
 }
 
 .column-scroll::-webkit-scrollbar {
@@ -927,85 +959,3 @@ body {
 }
 
 
-/* Блок с программным кодом*/
-.code-block {
-    background: #1e1e2e;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px 0;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-}
-
-.code-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 16px;
-    background: #181825;
-    border-bottom: 1px solid #313244;
-}
-
-.code-lang {
-    color: #89b4fa;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.copy-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: #313244;
-    color: #cdd6f4;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-}
-
-.copy-btn:hover {
-    background: #45475a;
-}
-
-.copy-btn:active {
-    transform: scale(0.96);
-}
-
-.copy-btn.copied {
-    background: #a6e3a1;
-    color: #1e1e2e;
-}
-
-.code-block pre {
-    margin: 0;
-    padding: 16px 20px;
-    overflow-x: auto;
-    color: #cdd6f4;
-    font-size: 14px;
-    line-height: 1.6;
-
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-}
-
-.code-block code {
-    font-family: inherit;
-    white-space: inherit;
-    display: block;
-    min-width: 0;      /* важно при использовании flex/grid-родителей */
-}
-
-/* Красивый скроллбар */
-.code-block pre::-webkit-scrollbar {
-    height: 8px;
-}
-.code-block pre::-webkit-scrollbar-thumb {
-    background: #45475a;
-    border-radius: 4px;
-}

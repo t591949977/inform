@@ -41,7 +41,12 @@
         { id: 'index',   btn: 'Старт' },
         { id: 'Lesson1', btn: 'Урок 1' },
         { id: 'Lesson2', btn: 'Урок 2' },
-        { id: 'Lesson3', btn: 'Урок 3' }
+        { id: 'Lesson3', btn: 'Урок 3' },
+        { id: 'Lesson4', btn: 'Урок 4' },
+        { id: 'Lesson5', btn: 'Урок 5' },
+        { id: 'Lesson6', btn: 'Урок 6' },
+        { id: 'Additional1', btn: 'Универсальные коллекции: Массив / Список значений' },
+        { id: 'Additional2', btn: 'Универсальные коллекции: Структура / Соответствие' }
     ];
 
     // ============================================
@@ -254,24 +259,3 @@
 
 })();
 
-// ------- JavaScript для копирования кода примеров 1С
-function copyCode(button) {
-    const codeBlock = button.closest('.code-block');
-    const code = codeBlock.querySelector('code').innerText;
-
-    navigator.clipboard.writeText(code).then(() => {
-        // Меняем текст и иконку
-        const label = button.querySelector('span');
-        const originalText = label.textContent;
-
-        button.classList.add('copied');
-        label.textContent = 'Скопировано!';
-
-        setTimeout(() => {
-            button.classList.remove('copied');
-            label.textContent = originalText;
-        }, 2000);
-    }).catch(err => {
-        console.error('Ошибка копирования:', err);
-    });
-}
