@@ -5,7 +5,7 @@
     <!-- Главная страница (английская) -->
     <url>
         <loc>https://inform.com.ge/</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-08-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -15,21 +15,50 @@
 
     <url>
         <loc>https://inform.com.ge/Lesson1</loc>
-        <lastmod>2026-08-18</lastmod>
+        <lastmod>2026-08-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://inform.com.ge/Lesson2</loc>
-        <lastmod>2026-08-19</lastmod>
+        <lastmod>2026-08-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
    <url>
         <loc>https://inform.com.ge/Lesson3</loc>
-        <lastmod>2026-08-20</lastmod>
+        <lastmod>2026-08-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url> 
-    
+   <url>
+        <loc>https://inform.com.ge/Lesson4</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> 
+    <url>
+        <loc>https://inform.com.ge/Lesson5</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> 
+   <url>
+        <loc>https://inform.com.ge/Lesson6</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> 
+   <url>
+        <loc>https://inform.com.ge/Additional1</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> 
+   <url>
+        <loc>https://inform.com.ge/Additional2</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> 
 </urlset>
