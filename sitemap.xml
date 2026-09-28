@@ -67,4 +67,16 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url> 
+<url>
+        <loc>https://inform.com.ge/Additional5</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> 
+   <url>
+        <loc>https://inform.com.ge/Additional6</loc>
+        <lastmod>2026-08-28</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url> 
 </urlset>
